@@ -1,0 +1,157 @@
+<?php
+session_start();
+    include("connection.php");
+    include("functions.php");
+
+    if($_SERVER['REQUEST_METHOD'] == "POST")
+    {
+      //something was posted
+      $user_name = $_POST['user_name'];
+      $password = $_POST['password'];
+
+      if(!empty($user_name) && !empty($password) && !is_numeric($user_name))
+      {
+          //save to database
+          $user_id = random_num(20);
+        $query = "insert into users (user_id,user_name,password) values ('$user_id','$user_name','$password')";
+        
+        mysqli_query($con, $query);
+        
+        header("Location: login.php");
+        die;
+      }else
+      {
+        
+        echo '<script>alert("Please fill in the blanks!")</script>';
+      }
+    }
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">          
+    <title>Sign up</title>
+    <style>
+        
+.box{
+    width: 30%;
+    height: 400px;
+    border:1px solid gray;
+    background-color: rgb(223, 225, 226);
+    opacity: 80%;
+    border-radius: 7%;
+    margin: 12% 35%;
+}
+.login-logo{
+    height: 120px;
+    width:28%;
+    margin-top: -60px;
+    margin-left: 35%;
+}
+body{
+
+    background-image: url(https://th.bing.com/th/id/R.63fa20909a5cc501382880a9752b5b44?rik=sjaM41Ghk0wsog&pid=ImgRaw&r=0)
+
+}
+input{
+    height: 35px;
+    width: 70%;
+    text-align: center;
+    margin: 4% 13%;
+    background-position: left center;
+    background-origin: content-box;
+    background-repeat: no-repeat;
+    background-size: 50px ;
+    background-image: url(https://i1.rgstatic.net/ii/profile.image/531423157538816-1503712562231_Q512/Bing-Xu-12.jpg);
+}
+input:hover{
+    background-color: rgb(207, 202, 224);
+    background-image: url(https://th.bing.com/th/id/OIP.MKJoMub2FqZ9UmwnUrtQNAAAAA?pid=ImgDet&w=300&h=300&rs=1);
+}
+.user-logo{
+    width: 10%;
+    height: 30px;
+    margin-bottom: -500px;
+}
+::placeholder {
+    text-align :center;
+}
+.design-password{
+    height: 35px;
+    width: 70%;
+    text-align: center;
+    background-position: left center;
+    background-origin: content-box;
+    background-repeat: no-repeat;
+    background-size: 50px ;
+    background-image: url(https://store-images.s-microsoft.com/image/apps.22271.13510798882849489.4c7cc7cd-80f3-43ba-b481-038afa9ae719.1ffb0295-ac3a-41f7-be50-3e66b458efc8?mode=scale&q=90&h=300&w=300);
+
+}
+.design-password:hover{
+
+    background-image: url(imgpass.jpg);
+
+}
+.design-email{
+    height: 35px;
+    width: 70%;
+    text-align: center;
+    background-position: left center;
+    background-origin: content-box;
+    background-repeat: no-repeat;
+    background-size: 50px ;
+    background-image: url(emaillogo.jpg);
+
+}
+.design-email:hover{
+
+    background-image: url(hovermail.jpg);
+
+}
+button{
+    width:30%;
+    height:50px;
+    margin: -10.5% 17%;
+    border-color: white;
+    filter: drop-shadow(1px 2px 3px gray);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    float:right;
+}
+button:hover{
+    background-color: rgb(189, 187, 187);
+}
+a{
+    border:1px solid gray;
+    background-color: whitesmoke;
+    padding: 14px 40px 16px 40px;
+    color: black;
+    filter: drop-shadow(3px 3px 4px gray);
+    border-color: white;
+    margin-top: 10px;
+    float:left;
+    margin-left: 70px;
+}
+a:hover{
+    background-color: rgb(189, 187, 187);
+}
+    </style>
+</head>
+<body>
+
+    <div class="box">
+        <form method="post">
+            <img class="login-logo" src="https://www.logolynx.com/images/logolynx/5c/5c5fbe66daa900ad13c9a0046596c465.png"/>
+        <br>
+        <input type="text" id="username" name="username" placeholder="Name"></input>
+        <input class="design-email" type="email" id="user_name" name="user_name" placeholder="Email"></input>
+        <input class="design-password" type="password" id="password" name="password" placeholder="Password"></input>
+        <a href="login.php">Login</a>  <button type="submit" id="submit" name="submit" value="Signup">Create Account</button>
+        
+    </form>
+        
+    </div>
+</body>
+</html>

@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Contact Us</title>
+	<style>
+	.myheader{
+	font-family: courier;
+	font-size:55px;
+	filter: drop-shadow(5px 5px 3px gray);
+	} 
+
+	
+	 form {
+            background-color: white;
+            max-width: 30%;
+            margin: 1% auto;
+            padding: 2px 10px;
+            box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.5);
+			opacity: 93%;
+			border-radius: 30px;
+        }
+ 
+        .form-control {
+            text-align: left;
+            margin-bottom: 25px;
+        }
+ 	
+       
+        .form-control label {
+            display: block;
+            margin-bottom: 10px;
+        }
+	
+        textarea{
+			height: 48px;
+		}
+
+        .form-control input,
+        .form-control select,
+        .form-control textarea {
+            border: 1px solid #777;
+            border-radius: 2px;
+            font-family: inherit;
+            padding: 10px;
+            display: block;
+            width: 70%;
+	   		margin-left:12%;
+        }
+ 	 .form-control input:hover,
+	 .form-control select:hover,
+        .form-control textarea:hover{	
+		filter:drop-shadow(2px 2px 3px blue);
+	}
+	 .form-control:hover {
+		color:blue;
+        }
+
+		body{
+		background-image: url(https://getwallpapers.com/wallpaper/full/4/d/8/212651.jpg);
+	}
+	 .buttons {
+            background-color: #05c46b;
+            border: 1px solid #777;
+            border-radius: 2px;
+            font-family: inherit;
+            font-size: 19px;
+            display: block;
+            width: 25%;
+            margin-top: 18px;
+            margin-bottom: 20px;
+	   	 	height:35px;
+	    	transition-duration: 0.8s;
+	    	cursor: pointer;
+        }
+	.buttons:hover{
+	background: #0090FF;
+  	text-decoration: none;
+	color:white;
+	}
+	.errorbox {
+		border:1px solid gray;
+		border-radius: 10px;
+		background-color:rgb(230, 69, 69);
+		text-align: center;
+		font-size: 20px;
+		height: 20px;
+		width: 100%;
+		color: white;
+		animation: fadeOut 2s ease-in 3s;
+		animation-fill-mode: forwards;
+	}
+	.successbox{
+		border:1px solid gray;
+		border-radius: 10px;
+		background-color:rgb(41, 226, 81);
+		text-align: center;
+		font-size: 20px;
+		height: 20px;
+		width: 100%;
+		color: white;
+		animation: fadeOut 3s ease-in 3s;
+		animation-fill-mode: forwards;
+	}
+	.btnsize{
+		font-size: 15px;
+		width: 40px;
+		height: 20px;
+		padding: 2px 2px 2px 2px;
+		background-color: white;
+		animation: fadeOut 3s ease-in 3s;
+		animation-fill-mode: forwards;
+		border: 1px solid black;
+	}
+	@keyframes fadeOut{
+		from {
+			opacity: 1;
+		}
+		to {
+			visibility: hidden;
+			opacity: 0;
+		}
+	}
+	body{
+		margin:0;
+	}
+	
+.navbar {
+  overflow: hidden;
+  background:rgba(80,80,80,0.4);
+}
+
+.navbar a {
+  float: left;
+  font-size: 22px;
+  color: white;
+  text-align: center;
+  padding: 28px 16px;
+  text-decoration: none;
+}
+
+.dropdown {
+  float: right;
+  overflow: hidden;
+  margin-right: 20px;
+}
+
+.dropdown .dropbtn {
+  font-size: 18px;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 28px 20px;
+  background-color: inherit;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: red;
+}
+
+.dropdown-content {
+  display: none;
+  position:absolute;
+  background-color: #f9f9f9;
+  min-width: 138px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+  font-size: 16px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+.drp-btn-menu{
+	margin-left: 500px;
+}
+a{
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+	</style>
+</head>
+<body>
+<div class="navbar">
+<a style="margin-left:200px"href="index.php">Home</a>
+<a style="margin-left:850px"href="indexs.php">Contact Us</a>
+  <div class="dropdown">
+    <button style="font-size:22px" class="dropbtn">Dropdown 
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="#">Link 1</a>
+      <a href="#">Link 2</a>
+      <a href="logout.php">Log Out</a>
+    </div>
+  </div> 
+</div>
+<center><form method="POST" action=" nexts.php" onsubmit="return checkform(this);">
+	
+		<h1 class="myheader"> Contact Us</h1>
+		<p><i>Got a question? We'd love to hear from you. Send us a message and we'll respond as soon as possible.</i></p><br>
+		<?php
+		
+        $Cmt = "";
+        $Cmts ="";
+        if(isset($_GET['error']))
+        {
+            $Cmt = "Please Fill in the blanks.";
+            echo '<div class="errorbox">'.$Cmt.'</div>';
+        }
+        if(isset($_GET['success'])) 
+        {
+            $Cmt = "Your Message has been sent.";
+            $Cmts = "View";
+            echo '<div class="successbox">'.$Cmt.'</div>';
+            echo '<center><br><button class="btnsize" type="submit" name="Vbtn" Value="View" formaction="views.php" method="VIEW">'.$Cmts.'
+            </button></center>';
+            
+            echo '<button class="buttons" type="submit" formaction="indexs.php">Back</button>';
+            
+            return false;
+        }
+    ?> 
+
+    <br>
+<div class="form-control">
+        <label for="name" id="label-name"style="margin-left:12%;"> Name </label>
+        <input type="text" name="Uname" id="Uname" placeholder="Enter your name" />
+ </div>
+ <div class="form-control">
+        <label for="email" id="label-email" style="margin-left:12%;"> Email </label>
+        <input type="email" name="Email" id="Email" placeholder="Enter your email" />
+ </div>
+ <div class="form-control">
+        <label for="number" id="label-number" style="margin-left:12%;">Phone Number </label>
+        <input type="number" name="Pnumber" id="Pnumber" placeholder="Enter your phone number" />
+ </div>
+<div class="form-control">
+        <label for="comment"style="margin-left:12%;"> Message </label>
+        <textarea  name="Comment" id="Comment"\ placeholder="Enter your message here"></textarea>
+    </div>	
+        
+
+  <button class="buttons"type="submit" name="Sbtn" value="submit" >Submit</button>
+
+</form>
+</center>
+        
+</body>
+</html>

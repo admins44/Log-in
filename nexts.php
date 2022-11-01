@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+</head>
+<body>
+
+<?php
+
+if(isset($_POST['Sbtn']))
+{
+	$Username = $_POST['Uname'];
+	$Email = $_POST['Email'];
+	$Number = $_POST['Pnumber'];
+	$Message = $_POST['Comment'];
+
+
+
+	if(empty($Username) || empty($Email) || empty($Number) || empty($Message))
+	{
+		header('location:indexs.php?error');
+	}
+	if(!empty($Username) || !empty($Email) || !empty($Number) || !empty($Message))
+	{
+		header('location:indexs.php?success');
+		
+	}
+}
+?>
+</body>
+</html>
